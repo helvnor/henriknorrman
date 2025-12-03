@@ -29,5 +29,5 @@ jobs:
           context: .
           push: true
           tags: | 
-            ${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+            ${{ secrets.IMAGE_NAME }}:latest-${{ github.run_number }}
             ${{ secrets.IMAGE_NAME }}:latest
