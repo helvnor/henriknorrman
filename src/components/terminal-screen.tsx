@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import screenImg from "/public/screen.svg";
-import { courier, hand } from "../app/fonts";
+import { courier } from "../app/fonts";
 import { CommandAction } from "@/actions";
 
 interface TerminalScreenProps {

@@ -6,7 +6,7 @@
     },
     {
         "cmd": "clear",
-        "value": "Clearning terminal...",
+        "value": "Clearing terminal...",
         "actionCode": "clear"
     },
     {

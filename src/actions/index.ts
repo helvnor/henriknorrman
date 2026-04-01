@@ -28,7 +28,7 @@ interface TerminalState {
     payload?: CommandAction
 }
 
-async function callCommand(id: string, input: string, errorState: TerminalState) {
+async function callCommand(id: string, input: string) {
     
     // Get command
     const commands = (Commands as [Command]);
@@ -54,20 +54,13 @@ export async function terminalState(formState: TerminalState, formData: FormData
         cmd: formData.get("cmd"),
     });
     
-    const input = formData.get("cmd")!.toString();
-    const id = randomUUID(); 
-    
-    // Default error state
-    const errorState = {
-        payload: {
-            id, input, output: "", actionCode: ActionCode.ERROR
-        }
-    }
+    const input = formData.get("cmd")?.toString() ?? "";
+    const id = randomUUID();
 
     // Input error -> return blank output
     if(!result.success) {
-        return {payload: {...errorState.payload, output: ""}};
+        return {payload: {id, input, output: "", actionCode: ActionCode.ERROR}};
     }
-    
-    return callCommand(id, input, errorState);
+
+    return callCommand(id, input);
 }

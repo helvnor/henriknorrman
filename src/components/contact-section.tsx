@@ -39,7 +39,7 @@ export default function ContactSection() {
         />
         <LinkCard
           title="Email"
-          description="Sent me an old school email."
+          description="Send me an old school email."
           username="email@henriknorrman.com"
           link="mailto:email@henriknorrman.com"
           featureColour="border-email"
